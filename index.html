@@ -1,0 +1,83 @@
+<!--/*created by yuanzeping*/-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <title>VPN重构</title>
+        <link href="css/style.css" rel='stylesheet'>
+        <script src="js/action.js"></script>
+    </head>
+    <body>
+<!--        搜索框-->
+        <div class="search">
+            <div>
+                <span class="firstsearch">订单流水号&#12288;|</span><span>网号&#12288;|</span><span>电路代号&#12288;|</span><span>客户名称</span>
+                <br>
+                <input type="text" id="mainSearch"><img src="img/searchfilter.png" id="searchfilter"><button>&#12288;&#12288;</button>
+<!--            搜索结果-->
+                <div class="searchresult hide">
+                    <select><option>工单状态</option></select><select><option>操作类型</option></select><input><input>
+                        <table>
+                             <thead>
+                            <th></th><th></th><th></th><th></th><th></th>
+                            </thead>
+                        </table>
+                </div>
+            </div>   
+        </div>
+<!--        tab层一-->
+        <ul id="maintab"><li class="active">二层业务</li><li>三层业务</li><li>xxx业务</li></ul>
+<!--二级tab-->
+        
+        <ul id="secondtab"><span id="triangle-up"></span><li rel="自动开通">自动开通</li><li class="inactive" rel="手动开通">手动开通</li><li class="inactive" rel="待割接电路">待割接电路</li><li class="inactive" rel="查询预约">查询预约</li></ul>
+        <div class="show">
+<!--        数据展示区-->
+            <div id="tabname">自动开通</div>
+            <div class="dataBox">
+                <table class="items">
+                    <thead><tr><td><input type="checkbox" checked>全选</td></tr></thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="tablewrap">
+                <table>
+                       <thead>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                </table>
+                    
+                </div>
+            </div>
+        </div>
+        <!--        菜单-->
+                            <ul id="setting">
+                                
+                            </ul>
+<!--        时间显示菜单-->
+        <div id="datepicker">
+             开始时间<input type="text">
+             <div class="dateselector">
+                   <button id="decreaseyear"><</button><button id="decreasemonth"><<</button><span id="year">2016</span><span>年</span><span id="month">9</span><span>月</span><button id="increasemonth">>></button><button id="increaseyear">></button>
+                 <div class="daylist">
+                  <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button>
+                  <br>
+                  <button>7</button><button>8</button><button>9</button><button>10</button><button>11</button><button>12</button>
+                  <br>
+                  <button>13</button><button>14</button><button>15</button><button>16</button><button>17</button><button>18</button>
+                 <br>
+                  <button>19</button><button>20</button><button>21</button><button>22</button><button>23</button><button>24</button>
+                 <br>
+                  <button>25</button><button>26</button><button>27</button><button>28</button><button>29</button><button>30</button>
+                 <br>
+                  <button>31</button>
+                 </div>
+                      <input type="number" min=1 max="24" id="hour">时<input type="number" min=0 max="60" id="minute">分<input type="number" id="second">秒
+                       <br>
+            </div>
+            <br>
+             结束时间<input type="text">
+        </div>
+    </body>
+</html>

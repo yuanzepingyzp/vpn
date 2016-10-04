@@ -1,0 +1,441 @@
+/*created by yuanzeping*/
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+html,body{
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+/*    background-color: rgb(250,250,250);*/
+}
+
+input:focus{
+     outline: none;
+}
+/*状态*/
+.firstsearch{
+    color: rgb(220,100,100) !important;
+}
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+.active{
+    background-color: #1EBAEB;
+    color: white;
+}
+.inactive{
+    -webkit-filter: grayscale(100%);
+     -moz-filter: grayscale(100%);
+     -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+.operate{
+    background-color: #CBECF5;
+}
+
+.activebutton{
+    background-color:rgb(100,200,100) !important;
+}
+/*/搜索框*/
+.search{
+    padding:20px 38px;
+    background-color: #f7f7f7;
+    padding-bottom: 20px;
+    margin-top: 10px;;
+    position: relative;
+}
+.search>div{
+    margin: 0 auto;
+}
+.search span{
+    color: #666;
+    padding: 0.2% 0.5%;
+    cursor: pointer;
+}
+#searchfilter{
+    position: relative;
+   right: 40px;
+    top:5px;
+}
+#mainSearch{
+    width: 89%;
+    height: 40px;
+    border: 1px solid rgb(50,200,160);
+    margin-top: 10px;
+    background-color: #f7f7f7;
+}
+
+.search button{
+    margin-left: -20px;
+    width: 10%;
+    min-width: 100px;
+    height: 42px;
+    color: #58D2A9;
+    border: none;
+    background-color: rgb(50,200,160);
+    background-image: url(../img/search.png);
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*搜索结果*/
+.searchresult{
+    position: absolute;
+    width: 84%;
+    min-width:800px;
+    left: 38px;
+    top:95px;
+    border-top: 1px solid  rgb(50,200,160);
+    border-left: 1px solid  rgb(50,200,160);
+    box-shadow: 1px 1px 1px rgb(50,200,160);
+    background-color: white;
+    border-radius: 5px;
+}
+.searchresult table{
+    width: 100%;
+}
+.searchresult select{
+    width: 20%;
+    margin: 1% 1%;
+    height: 30px;
+}
+
+.searchresult select option{
+    text-align: center;
+    width: 100%;
+}
+.searchresult input{
+    width: 20%;
+    margin: 1% 1%;
+    height: 25px;
+}
+.searchreault table td{
+    text-align: center !important;
+}
+/*切换tab*/
+ul{
+    list-style:none;
+    margin-top: 14px;
+}
+
+ul li{
+    display: inline;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    color: rgb(150,150,150);
+}
+
+#maintab{
+    width: 100%;
+    background-color: #efefef;
+    height: 38px;
+}
+#maintab li{
+    display: inline-block;
+    height: 38px;
+    width: 224px;
+    line-height: 38px;
+    margin-left: 2px;
+}
+/*二级切换栏*/
+#secondtab{
+    width: 530px;
+    height: 44px;
+    box-shadow: 1px 1px 5px rgb(100,100,100);
+    border-radius: 2px;
+    line-height: 44px;
+    position: absolute;
+    top:170px;
+    left: -1000px;
+    z-index: 2;
+    background-color: white;
+}
+#triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid white;
+    position: absolute;
+    top:-10px;
+    left: 30px;
+}
+#secondtab li{
+    padding: 10px 40px;
+    font-size: 12px;
+}
+#secondtab li:nth-child(2){
+    color: rgb(250,170,140);
+     background-image: url("../img/open.png");
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: 10px center;
+}
+#secondtab li:nth-child(3){
+    color: rgb(250,170,140);
+    background-image: url(../img/hand.png);
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: 10px center;
+}
+#secondtab li:nth-child(4){
+    color: rgb(250,170,140);
+    background-image: url(../img/circuit.png);
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: 10px center;
+}
+#secondtab li:nth-child(5){
+    color: rgb(250,170,140);
+    background-image: url(../img/find.png);
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: 10px center;
+}
+/*主显示区*/
+.dataBox{
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+     border-radius: 0 10px 10px 10px;
+    position: relative;
+    padding: 10px 30px;
+    height: 600px;
+}
+.dataBox span{
+     font-size: 15px;
+    position: relative;
+    top:-10px;
+}
+.dataBox>img[src="img/filter.png"]{
+     margin-left: 4%;
+}
+/*表格*/
+.tablewrap{
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+#tabname{
+    position: relative;
+    top:1px;
+    z-index: 1;
+    margin-top: 14px;
+    text-align: center;
+    width: 200px;
+    height: 0;
+    color: #666;
+    font-weight: 900;
+    line-height: 50px;
+    border-bottom: 50px solid #f7f7f7;
+    border-right: 30px solid transparent;
+    border-left: 1px solid #dcdcdc;
+}
+.tablewrap table{
+    width: 3000px;
+    text-align: center;
+    margin: 0 auto;
+    border-collapse: collapse;
+    
+}
+.tablewrap table thead{
+    display:table;
+  width:100% !important;
+   width:100%;
+    table-layout:fixed;
+}
+
+.tablewrap table tbody{
+    height: 500px;
+    display: block;
+    overflow-y: auto;
+}
+.tablewrap table tbody tr{
+    display:table;
+    width:100%;
+    height:30px;
+    table-layout:fixed;
+}
+.tablewrap table td{
+    height: 36px;
+    border-bottom: 1px solid rgb(200,200,200);
+}
+
+.tablewrap table thead tr:nth-child(1) td{
+    border-bottom: 2px solid #bebebe !important;
+    font-weight: 600;
+    color: #333 !important;
+    padding-bottom: 12px;
+}
+.tablewrap table thead input{
+    width: 80%;
+    border-radius:50px;
+    border: 1px solid rgb(220,220,220);
+    padding: 5px 3%;
+    background-image:url(../img/littlesearch.png);
+    background-repeat: no-repeat;
+    background-position: 90% center;
+}
+.tablewrap table tbody input{
+    width: 70%;
+    border-radius:50px;
+    border: none;
+    padding: 5px 3%;
+    background-color: rgba(1,1,1,0);
+    text-align: center;
+}
+.tablewrap table tbody button{
+    width: 80px;
+    height: 24px;
+    border: none;
+    background-color: #9DC86E;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+}
+.tablewrap table tbody tr td{
+    color: rgb(100,100,100);
+}
+.tablewrap table tbody tr td:nth-child(5){
+    color: rgb(100,180,250);
+}
+img[src="img/delete.png"]{
+    margin-left: 5px;
+}
+img[src="img/edit.png"]{
+    margin-left: 5px;
+}
+/*//复选框*/
+.items{
+    background-color: white;
+    box-shadow: 1px 1px 3px rgb(190,190,190);
+    position: absolute;
+    left: -1000px;
+    top:10px;
+}
+.items td{
+     text-align: left !important;
+     padding: 5px 10px;
+}
+.items input{
+    background-color: rgb(240,240,240);
+    height: 15px;
+    width: 15px;
+}
+/*设置菜单*/
+#setting{
+    position: absolute;
+    width: 180px;
+    left: 200px;
+    top:-1000px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgb(190,190,190);
+    background-color: white;
+}
+#setting li{
+    display:block;
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 24px;
+    color: #666;
+    text-align: left;
+}
+#setting li a{
+    color: inherit;
+    text-decoration: none;
+}
+#setting li:hover{
+    background-color: #1ebbeb;
+    color: white;
+}
+
+/*时间选择*/
+#datepicker{
+    background-color: white;
+    position: absolute;
+    top:-1000px;
+    left: 200px;
+    text-align: center;
+    width: 300px;
+    border-top:1px solid rgb(190,190,190);
+    border-left: 1px solid rgb(190,190,190);
+    box-shadow: 2px 2px 4px rgb(190,190,190);
+    padding: 20px;
+    color: rgb(100,100,100);
+    border-radius: 5px;
+}
+
+#datepicker input[type="text"]{
+    color: rgb(100,100,100);
+    margin-left: 10px;
+    height: 30px;
+    width: 200px;
+    background-color: rgb(230,230,230);
+    border: none;
+    background-image: url(../img/calendar.png);
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+}
+
+#datepicker input:nth-child(1){
+    margin-bottom: 20px;
+}
+/*时间选择控件*/
+.dateselector{
+    display: none;
+    position: absolute;
+    top:60px;
+    left: 100px;
+    background-color: white;
+    box-shadow: 1px 1px 2px black;
+    width: 80%;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+.dateselector div{
+    text-align: left; 
+    width: 90%;
+    margin: 0 auto !important;
+}
+.dateselector span{
+    color: #1EBAEB;
+    font-weight: 800;
+}
+.dateselector button{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+.dateselector button:hover{
+    background-color: #1EBAEB;
+    color: white;
+}
+
+.dateselector input[type="number"]{
+    width: 50px;
+}
+
+
+@media screen and (max-height:900px){
+    .dataBox{
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 0 10px 10px 10px;
+    position: relative;
+    padding: 10px 30px;
+    height: 500px;
+}
+    
+}
